@@ -1,8 +1,8 @@
 Building configuration...
 
-Current configuration : 4206 bytes
+Current configuration : 4323 bytes
 !
-! Last configuration change at 06:34:13 UTC Tue Feb 23 2021 by cisco
+! Last configuration change at 07:23:35 UTC Tue Feb 23 2021 by NETCONF
 !
 version 16.9
 service timestamps debug datetime msec
@@ -135,6 +135,10 @@ redundancy
 ! 
 !
 !
+interface Loopback167
+ description Pod Number 67
+ ip address 10.111.67.2 255.255.255.255
+!
 interface GigabitEthernet1
  description MANAGEMENT INTERFACE - DON'T TOUCH ME
  ip address 10.10.20.48 255.255.255.0
@@ -195,6 +199,7 @@ line vty 0 4
  login local
  transport input ssh
 !
+ntp server 10.111.67.66
 !
 !
 !
